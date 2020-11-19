@@ -130,15 +130,23 @@ class App extends Component {
         {console.log('Object', this.usersByMovie)}
         {console.log('Object Keys', Object.keys(this.usersByMovie))}
         <ul>
-          {Object.keys(movies).map(key => {
-            const likedBy = this.usersByMovie[key];
+          {Object.keys(movies).map(movie => {
+            const likedBy = this.usersByMovie[movie];  // get the user array for this movie
             console.log('likedBy', likedBy)
             
             return (
-              <li key={movies[key].id}>
-                <h2>{movies[key].name}</h2>
+              <li key={movies[movie].id}>
+                <h2>{movies[movie].name}</h2>
+                <p>Liked By:</p>
                 <ul>
-                  <li><p>Hello</p></li>
+                  {likedBy &&
+                    likedBy.map(userId => {
+                      return (
+                        <li key={userId}>
+                          <p>{users[userId].name}</p>
+                        </li>
+                      );
+                    })}
                 </ul>
               </li>
             );
