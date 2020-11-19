@@ -131,6 +131,8 @@ class App extends Component {
         {console.log('Object Keys', Object.keys(this.usersByMovie))}
         <ul>
           {Object.keys(movies).map(key => {
+            const likedBy = this.usersByMovie[key];
+            console.log('likedBy', likedBy)
             return (
               <li key={movies[key].id}>
                 <h2>{movies[key].name}</h2>
