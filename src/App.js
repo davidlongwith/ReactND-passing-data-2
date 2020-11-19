@@ -137,16 +137,9 @@ class App extends Component {
             return (
               <li key={movies[key].id}>
                 <h2>{movies[key].name}</h2>
-                  <ul>
-                   
-                    {if (!likedBy || likedBy.length === 0) {
-                      <p>No Favorites</p>
-                    } else {
-                      console.log("errors galore")
-                    }
-                    }
-
-                  </ul>
+                <ul>
+                  <li><p>Hello</p></li>
+                </ul>
               </li>
             );
           })}
