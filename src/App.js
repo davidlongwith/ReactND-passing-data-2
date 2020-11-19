@@ -129,6 +129,15 @@ class App extends Component {
         <h2>How Popular is Your Favorite Movie?</h2>
         {console.log('Object', this.usersByMovie)}
         {console.log('Object Keys', Object.keys(this.usersByMovie))}
+        <ul>
+          {Object.keys(movies).map(key => {
+            return (
+              <li key={movies[key].id}>
+                <h2>{movies[key].name}</h2>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     );
   }
