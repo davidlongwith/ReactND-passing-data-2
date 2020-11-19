@@ -133,9 +133,20 @@ class App extends Component {
           {Object.keys(movies).map(key => {
             const likedBy = this.usersByMovie[key];
             console.log('likedBy', likedBy)
+            
             return (
               <li key={movies[key].id}>
                 <h2>{movies[key].name}</h2>
+                  <ul>
+                   
+                    {if (!likedBy || likedBy.length === 0) {
+                      <p>No Favorites</p>
+                    } else {
+                      console.log("errors galore")
+                    }
+                    }
+
+                  </ul>
               </li>
             );
           })}
